@@ -1,0 +1,93 @@
+const fileSystem = require('fs');
+
+fileSystem.writeFileSync('./miPrimerArchivo.txt',"Productos OliHouse");
+
+try{
+    let fileContent = fileSystem.readFileSync('./miPrimerArchivo.txt','utf-8');
+    fileContent = fileContent.replace('OliHouse','OlisHouseDeco');
+    fileSystem.writeFileSync('./miPrimerArchivo.txt',fileContent);
+    console.log(fileContent);
+}catch(error){
+    console.log("AAA",error);
+}
+
+Append (Update)
+fileSystem.appendFileSync('./miPrimerArchivo.txt',' . DecoHogar');
+
+Unlink (Delete)
+fileSystem.unlinkSync('./miPrimerArchivo.txt');
+
+
+const products = [
+    {
+        "id": 1,
+        "tittle": "Reloj Olivia",
+        "description": "Ver descripcion",
+        "code": 170324,
+        "price": 70000,
+        "status":"true",
+        "stock": 10, 
+        "category": "Deco",
+        "img": "https://images.pexels.com/photos/552774/pexels-photo-552774.jpeg?auto=compress&cs=tinysrgb&w=600"
+                
+    },
+    {
+        "id": 2,
+        "tittle": "Espejo Amber",
+        "description": "Ver descripcion",
+        "code": 240122,
+        "price": 35000,
+        "status":"true",
+        "stock": 8,
+        "category": "Espejos",
+        "img": "https://images.pexels.com/photos/6620705/pexels-photo-6620705.jpeg?auto=compress&cs=tinysrgb&w=600"
+                
+    },
+    {
+        "id": 3,
+        "tittle": "Set de velas Ameli",
+        "description": "Ver descripcion",
+        "code": 140593,
+        "price": 15500,
+        "status":"true",
+        "stock": 3,
+        "category": "Deco",
+        "img": "https://images.pexels.com/photos/4887772/pexels-photo-4887772.jpeg?auto=compress&cs=tinysrgb&w=600"
+                
+    },
+    {
+        "id": 4,
+        "tittle": "Set de higiene personal madera",
+        "description": "Ver descripcion",
+        "code": 70386,
+        "price": 35500,
+        "status":"true",
+        "stock": 5,
+        "category": "Kit de baño",
+        "img": "https://media.istockphoto.com/id/641732948/es/foto/spa-productos-naturaleza-muerta.jpg?s=612x612&w=0&k=20&c=4QbEA2fDUnkcXMvddg4j2spkbRqrK2IVMfT5wfJMh-g="
+               
+                
+    },
+    {
+        "id": 5,
+        "tittle": "Box higiene",
+        "description": "Ver descripcion",
+        "code": 60697,
+        "price": 23500,
+        "status":"true",
+        "stock": 3,
+        "category": "Kit de baño",
+        "img": "https://media.istockphoto.com/id/1349994332/es/foto/paquete-de-autocuidado-caja-de-regalo-de-temporada-con-productos-cosm%C3%A9ticos-org%C3%A1nicos-sin.jpg?b=1&s=612x612&w=0&k=20&c=6RI4pjWkckju_E6s30JBTxVgaZN_Rsx6qhw12EcyVzg="
+                
+               
+    }
+]
+
+const cart= [
+    {
+        "id": "",
+        "tittle": ""
+    }
+]
+
+fileSystem.writeFileSync('./person.json',JSON.stringify(persons,null,'\t'));
