@@ -1,6 +1,7 @@
 import express from 'express';
 import productsRouter from './routes/products.router.js';
-import carritoRouter from '.routes/carrito.router.js';
+import carritoRouter from './routes/carrito.router.js';
+import __dirname from "./utils.js";
 
 const app = express();
 

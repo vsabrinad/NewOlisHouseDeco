@@ -3,23 +3,12 @@ import { Router } from "express";
 const router = Router();
 
 
-router.get('/',(req,res)=>{
-    res.send("Hola desde router de productos");
+
+
+router.get('/api/carts',(req,res)=>{
+    res.send("Carrito");
 })
 
-router.post('/',uploader.single('image'),(req,res)=>{
-    console.log(req.file)
-    console.log(req.body);
-    products.push({
-        id:req.body.id,
-        products:req.body.products,
-    })
-    res.send("Producto agregado");
-})
-
-router.get('/:cid',(req,res)=>{
-
-})
 
 router.post('/:cid/product/:pid',(req,res)=>{
     console.log(req.file)
@@ -30,6 +19,27 @@ router.post('/:cid/product/:pid',(req,res)=>{
     })
     res.send("Producto agregado");
 })
+
+router.get('/:cid',(req,res)=>{
+    const id = req.params.id;
+    console.log(id);
+    const products= []
+ if(products){
+    res.send("Productos elegidos")
+ }
+})
+router.post('/',uploader.single('image'),(req,res)=>{
+    console.log(req.file)
+    console.log(req.body);
+    products.push({
+        id:req.body.id,
+        products:req.body.products,
+    })
+    res.send("Producto agregado");
+})
+
+
+
 
 router.get('/:pid',(req,res)=>{
 
